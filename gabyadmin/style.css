@@ -2183,12 +2183,14 @@ pre {
 
 a {
     background-color: transparent;
-    -webkit-text-decoration-skip: objects
+    -webkit-text-decoration-skip: objects;
+    letter-spacing: 2px;
 }
+
 a:hover {
-    color: #255784;
-    background: #2196f3;
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    color: #0d8d2d;
+    background: #0d8d2d;
+    box-shadow: 0 0 10px #0d8d2d, 0 0 40px #0d8d2d, 0 0 80px #0d8d2d;
     transition-delay: 1s;
 }
 
@@ -2267,6 +2269,26 @@ button, input, optgroup, select, textarea {
 
 button, input {
     overflow: visible
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2196F3;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+button:hover {
+    color: #255784;
+    background: #2196F3;
+    box-shadow: 0 0 10px #2196F3, 0 0 40px #2196F3, 0 0 80px #2196F3;
+    transition-delay: 1s;
 }
 
 button, select {
@@ -4281,13 +4303,16 @@ h2 {
 h3 {
     font-size: 2.92rem;
     line-height: 110%;
-    margin: 1.9466666667rem 0 1.168rem 0
+    margin: 1.9466666667rem 0 1.168rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 h4 {
     font-size: 2.28rem;
     line-height: 110%;
-    margin: 1.52rem 0 .912rem 0
+    margin: 1.52rem 0 .912rem 0 font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 h5 {

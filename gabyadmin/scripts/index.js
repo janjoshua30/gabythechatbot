@@ -41,7 +41,7 @@ const setupGuides = (data) => {
       const guide = doc.data();
       const li = `
         <li>
-          <div class="collapsible-header green darken-2 white-text">FROM: ${guide.title} </div>
+          <div class="collapsible-header green white-text">FROM: ${guide.title} </div>
           <div class="collapsible-body grey lighten-2"> ${guide.content}?
           <button href="#" class="btn red darken-2 z-depth-0 modal-trigger" data-target="delete-question">DELETE</button> 
           </div>
@@ -57,7 +57,7 @@ const setupGuides = (data) => {
 };
 
 // setup materialize components
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
   var modals = document.querySelectorAll('.modal');
   M.Modal.init(modals);

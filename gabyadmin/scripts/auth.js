@@ -37,6 +37,10 @@ addAccount.addEventListener('submit', (e) => {
 
   // add account & add firestore data
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    swal(email, {
+      title: "ADDED NEW ACCOUNT!",
+      icon: "success",
+    });
     return db.collection('users').doc(cred.user.uid).set({
       name: addAccount['signup-bio'].value
     });
@@ -45,25 +49,20 @@ addAccount.addEventListener('submit', (e) => {
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     addAccount.reset();
+    auth.signOut();
   });
 });
 
 // logout
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
-  var logout = window.confirm('Are you sure you want to log out?');
-  if (logout) {
-    auth.signOut();
-  } else {
-    e.preventDefault();
-  }
+  auth.signOut();
 });
 
 // delete
 const deleteForm = document.querySelector('#delete-form');
 deleteForm.addEventListener('click', (e) => {
-  db.collection('guides').doc().delete();
-  deleteForm.reset();
+  deleteForm.close();
 });
 
 // // cancel
@@ -78,29 +77,32 @@ const errorElement = document.getElementById('error-message')
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   // get user info
   const email = loginForm['login-email'].value;
   const password = loginForm['login-password'].value;
 
   // log the user in
   auth.signInWithEmailAndPassword(email, password).then((cred) => {
+    swal({
+      title: "You are now signed in!",
+      icon: "success",
+    });
     // close the signup modal & reset form
     const modal = document.querySelector('#modal-login');
     M.Modal.getInstance(modal).close();
     loginForm.reset();
   });
-
-  let messages = []
   if (email === 'csso@gmail.com') {
-    messages.push("Your email address is not allowed to access Gaby!")
+    swal({
+      title: "ACCESS DENIED!",
+      icon: "error",
+    });
   }
-  if (password !== 'shoutliner123'){
-    messages.push("Incorrect Password!")
+  if (password !== 'shoutliner123') {
+    swal({
+      title: "INCORRECT EMAIL OR PASSWORD!",
+      icon: "error",
+    });
   }
-  if (messages.length > 0){
-    e.preventDefault();
-    errorElement.innerHTML = messages.join(', ')
-  }
-
 });

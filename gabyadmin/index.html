@@ -5,51 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Compiled and minified CSS -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>Gaby - Chatbot</title>
 </head>
 
 <body>
-  <!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: 'v7.0'
-      });
-    };
-
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-  <!-- Your Chat Plugin code -->
-  <div class="fb-customerchat" attribution=setup_tool page_id="174811949289405" theme_color="#67b868">
-  </div>
 
   <!-- NAVBAR -->
-  <nav class="z-depth-0 green darken-2">
+  <nav class="z-depth-0 green darken-5">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li class="logged-in" style="display: none;">
-          <a href="#" class="white-text modal-trigger" data-target="modal-account">MY INFO</a>
+          <a href="#" class="white-text modal-trigger" data-target="modal-account">My Info</a>
         </li>
         <li class="logged-in" style="display: none;">
-          <a href="#" class="white-text modal-trigger" data-target="modal-signup">CREATE NEW ACCOUNT</a>
+          <a href="#" class="white-text modal-trigger" data-target="modal-signup">Create New Account</a>
         </li>
         <li class="logged-in" style="display: none;">
-          <a href="#" class="white-text" id="logout">LOGOUT</a>
-          <a href="#" class="white-text" id="delete"></a>
+          <a href="#" class="white-text" id="logout">Logout</a>
         </li>
         <li class="logged-out" style="display: none;">
-          <a href="#" class="white-text modal-trigger" data-target="modal-login">LOGIN</a>
+          <a href="#" class="white-text modal-trigger" data-target="modal-login">Login</a>
         </li>
         </span>
       </ul>
@@ -63,9 +42,9 @@
   </form>
 
   <!-- ADD ACCOUNT MODAL -->
-  <div id="modal-signup" class="modal">
+  <div id="modal-signup" class="modal" style="width: 500px;">
     <div class="modal-content">
-      <h4 class="green-text darken-5">CREATE NEW ACCOUNT</h4><br />
+      <h4 class="green-text darken-5">CREATE NEW ACCOUNT</h4>
       <form id="signup-form">
         <div class="input-field">
           <input type="text" id="signup-bio" required />
@@ -89,23 +68,22 @@
   </div>
 
   <!-- LOGIN MODAL -->
-  <div id="modal-login" class="modal" style="width: 400px;">
+  <div id="modal-login" class="modal" style="width: 480px;">
     <div class="modal-content">
-      <h4 class="black-text">
-        <img src="img/favicon.png" style="width: 100px;">HELLO THERE!
-      </h4><br />
-      <a class="green-text darken-5">Kindly provide your login details below.</a><br />
+      <h3 class="black-text center-align">Gaby the Chatbot</h3><br>
+      <h4 class="black-text center-align">HELLO THERE! 😊</h4>
+      <div class="green-text darken-5">Kindly provide your login details below.</div>
       <form id="login-form">
-        <div class="input-field" style="width: 350px;">
+        <div class="input-field">
           <input type="email" id="login-email" required />
           <label for="login-email">Email address</label>
         </div>
-        <div class="input-field" style="width: 350px;">
+        <div class="input-field">
           <input type="password" id="login-password" required />
           <label for="login-password">Your password</label>
         </div>
         <div id="error-message" class="red-text darken-5"></div><br />
-        <button class="btn green darken-2 z-depth-0">Login</button>
+        <button class="btn green darken-2 z-depth-0">LOGIN</button>
       </form>
     </div>
   </div>
@@ -123,7 +101,8 @@
     <div class="modal-content center-align">
       <h4>ARE YOU SURE YOU WANT TO DELETE THIS PENDING QUESTION?</h4><br />
       <form id="delete-form">
-        <button class="btn red darken-2 margin-1">YES</button>
+        <button class="btn red darken-2 margin-1">CONFIRM</button>
+        <button class="btn">CANCEL</button>
       </form>
     </div>
   </div>
