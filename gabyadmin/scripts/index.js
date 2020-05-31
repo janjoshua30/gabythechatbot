@@ -43,7 +43,8 @@ const setupGuides = (data) => {
         <li>
           <div class="collapsible-header green white-text">FROM: ${guide.title} </div>
           <div class="collapsible-body grey lighten-2"> ${guide.content}?
-          <button href="#" class="btn red darken-2 z-depth-0 modal-trigger" data-target="delete-question">DELETE</button> 
+          <button href="" class="btn red darken-2 z-depth-0">REPLY</button> 
+          <button href="#" class="btn red darken-2 z-depth-0 modal-trigger" data-target="delete-question">DELETE</button>
           </div>
         </li>
       `;
