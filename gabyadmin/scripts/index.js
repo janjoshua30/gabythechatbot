@@ -43,7 +43,7 @@ const setupGuides = (data) => {
         <li>
           <div class="collapsible-header green white-text">FROM: ${guide.title} </div>
           <div class="collapsible-body grey lighten-2"> ${guide.content}?
-          <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${guide.title}&tf=1" class="btn green darken-2 z-depth-0 modal-trigger">REPLY</a>
+          <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${guide.title}&tf=1" class="btn green darken-2 z-depth-0 modal-trigger" target="_blank">REPLY</a>
           <a href="#" class="btn red darken-2 z-depth-0 modal-trigger" data-target="delete-question">DELETE</a>
           </div>
         </li>
