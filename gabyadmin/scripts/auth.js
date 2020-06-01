@@ -112,10 +112,12 @@ $("#btn btn-info").click(function () {
   var email = $("#email").val();
 
   //reset the email
-  auth.sendPasswordResetEmail(email).then(function () {
-    swal({
-      title: "Success! Please check your email.",
-      icon: "success",
+  if (email != "") {
+    auth.sendPasswordResetEmail(email).then(function () {
+      swal({
+        title: "Success! Please check your email.",
+        icon: "success",
+      });
     });
-  });
+  }
 });
