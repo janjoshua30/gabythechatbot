@@ -5469,6 +5469,7 @@ body.keyboard-focused .dropdown-content li:focus {
 }
 
 .modal {
+    padding: 24px;
     display: none;
     position: fixed;
     left: 0;
@@ -5497,8 +5498,10 @@ body.keyboard-focused .dropdown-content li:focus {
     margin-top: 0
 }
 
-.modal .modal-content {
-    padding: 24px
+.modal-content {
+    padding: 24px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
 
 .modal .modal-close {
