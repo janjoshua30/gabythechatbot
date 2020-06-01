@@ -106,18 +106,3 @@ loginForm.addEventListener('submit', (e) => {
     });
   }
 });
-
-$("#reset-pass").click(function () {
-  var auth = firebase.auth();
-  var email = $("#emailad").val();
-
-  //reset the email
-  if (email != "") {
-    auth.sendPasswordResetEmail(email).then(function () {
-      swal({
-        title: "Success! Please check your email.",
-        icon: "success",
-      });
-    });
-  }
-});
