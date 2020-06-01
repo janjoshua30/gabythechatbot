@@ -50,7 +50,7 @@ const setupGuides = (data) => {
       `;
       html += li;
     });
-    guideList.innerHTML = '<div><center><h3>PENDING QUESTIONS</center></h3></div>' + html;
+    guideList.innerHTML = '<div><center><h3>PENDING QUESTIONS</h3></center><br><br></div>' + html;
   } else {
     guideList.innerHTML = '<img class="center-align" src="img/bg.jpg" style="width: 1100px;">';
   }
