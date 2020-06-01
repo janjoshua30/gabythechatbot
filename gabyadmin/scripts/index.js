@@ -52,7 +52,7 @@ const setupGuides = (data) => {
     });
     guideList.innerHTML = '<div><center><h3>PENDING QUESTIONS</center></h3></div>' + html;
   } else {
-    guideList.innerHTML = '<img class="center-align" src="img/try1.jpg" style="width: 900px;">';
+    guideList.innerHTML = '<img class="center-align" src="img/bg.jpg" style="width: 900px;">';
   }
 
 };
