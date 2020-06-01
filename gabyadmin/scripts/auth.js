@@ -107,9 +107,9 @@ loginForm.addEventListener('submit', (e) => {
   }
 });
 
-$("#btn btn-info").click(function () {
+$("#reset-pass").click(function () {
   var auth = firebase.auth();
-  var email = $("#email").val();
+  var email = $("#emailad").val();
 
   //reset the email
   if (email != "") {
