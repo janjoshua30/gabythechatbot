@@ -62,7 +62,8 @@ logout.addEventListener('click', (e) => {
 // delete
 const deleteForm = document.querySelector('#delete-form');
 deleteForm.addEventListener('click', (e) => {
-  deleteForm.close();
+  M.Modal.getInstance(deleteForm).close();
+  deleteForm.reset();
 });
 
 // // cancel
